@@ -47,12 +47,12 @@ if [ "$(uname)" == "Darwin" ]; then
 
 elif [ "$(uname)" == "Linux" ]; then
   mkdir -p build
-  cd build && cmake ../.. \
+  cd build && cmake .. \
     "${CMAKE_ARGS[@]}"
   cmake --build . -- "-j$(nproc)"
 else
   mkdir -p build
-  cd build && cmake ../.. \
+  cd build && cmake .. \
     "${CMAKE_ARGS[@]}"
   cmake --build .
 fi
