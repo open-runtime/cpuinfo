@@ -46,7 +46,13 @@ if [ "$(uname)" == "Darwin" ]; then
   lipo -create build/arm64/libcpuinfo.dylib build/x86_64/libcpuinfo.dylib -output build/macos_universal/libcpuinfo.dylib
 
 elif [ "$(uname)" == "Linux" ]; then
+  mkdir -p build
+  cd build && cmake ../.. \
+    "${CMAKE_ARGS[@]}"
   cmake --build . -- "-j$(nproc)"
 else
+  mkdir -p build
+  cd build && cmake ../.. \
+    "${CMAKE_ARGS[@]}"
   cmake --build .
 fi
