@@ -19,6 +19,8 @@ OPTION(CPUINFO_BUILD_MOCK_TESTS "Build cpuinfo mock tests" OFF)
 OPTION(CPUINFO_BUILD_BENCHMARKS "Build cpuinfo micro-benchmarks" OFF)
 OPTION(CPUINFO_BUILD_PKG_CONFIG "Build pkg-config manifest" OFF)
 
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
 # ---[ CMake options
 INCLUDE(GNUInstallDirs)
 
