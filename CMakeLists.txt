@@ -13,13 +13,15 @@ SET(CPUINFO_RUNTIME_TYPE "shared" CACHE STRING "Type of runtime library (shared,
 SET_PROPERTY(CACHE CPUINFO_RUNTIME_TYPE PROPERTY STRINGS default static shared)
 SET(CPUINFO_LOG_LEVEL "default" CACHE STRING "Minimum logging level (info with lower severity will be ignored)")
 SET_PROPERTY(CACHE CPUINFO_LOG_LEVEL PROPERTY STRINGS default debug info warning error fatal none)
-OPTION(CPUINFO_BUILD_TOOLS "Build command-line tools" ON)
+OPTION(CPUINFO_BUILD_TOOLS "Build command-line tools" OFF)
 OPTION(CPUINFO_BUILD_UNIT_TESTS "Build cpuinfo unit tests" OFF)
 OPTION(CPUINFO_BUILD_MOCK_TESTS "Build cpuinfo mock tests" OFF)
 OPTION(CPUINFO_BUILD_BENCHMARKS "Build cpuinfo micro-benchmarks" OFF)
 OPTION(CPUINFO_BUILD_PKG_CONFIG "Build pkg-config manifest" OFF)
 
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
+message("symbols: ${CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS}")
 
 # ---[ CMake options
 INCLUDE(GNUInstallDirs)
